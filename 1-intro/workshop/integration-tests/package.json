@@ -1,0 +1,22 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "all": " node server.js & jest --watchAll --colors",
+    "test": "jest --watchAll --colors",
+    "server": "node server.js"
+
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "ejs": "^3.1.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.7"
+  }
+}

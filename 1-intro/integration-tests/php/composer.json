@@ -1,0 +1,22 @@
+{
+    "name": "medicalib/messenger",
+    "description": "Demo chat for medicalib",
+    "type": "project",
+    "require": {
+        "monolog/monolog": "^1.24",
+        "phpunit/phpunit": "^8"
+    },
+    "autoload": {
+        "classmap": [
+            "src/"
+        ]
+    },
+    "require-dev": {
+    },
+    "authors": [
+        {
+            "name": "Paul Roussel",
+            "email": "paul.roussel.dev@gmail.com"
+        }
+    ]
+}
