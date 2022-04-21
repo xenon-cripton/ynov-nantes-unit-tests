@@ -17,7 +17,7 @@ The home page, accessed with /, currently redirect to `list`.
  - list (GET `/?url=Messenger/list`)
 The list of all the messages received.
 
- - create (POST `/?url=Messenger/create/user={user}&message={message}`)
+ - create (POST `/?url=Messenger/create/user={user}:message={message}`)
 Send a message.
 user - autor of the message
 message - the message
