@@ -1,10 +1,10 @@
+/* eslint-disable global-require */
+
 const {
   describe, expect, test, beforeEach,
 } = global;
 
 const fs = require('fs');
-
-const { main } = require('./main');
 
 const consoleSpy = jest.spyOn(console, 'error').mockImplementation();
 
@@ -14,12 +14,18 @@ describe('Integration tests for main', () => {
   });
 
   test('Integration test', async () => {
-    await main();
+    const outputFile = './dist/result.test.xml';
+    const { main } = require('./main');
+    await main(
+      './dist/',
+      './source.xml',
+      outputFile,
+    );
 
     // on s'assure que le fichier result est bien créé
-    expect(fs.existsSync('./dist/result.xml')).toBe(true);
+    expect(fs.existsSync(outputFile)).toBe(true);
     // on s'assure du contenu du fichier
-    expect(fs.readFileSync('./dist/result.xml', 'utf8')).toBe(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+    expect(fs.readFileSync(outputFile, 'utf8')).toBe(`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <note>
   <to>Toma</to>
   <from>Benjamin</from>
