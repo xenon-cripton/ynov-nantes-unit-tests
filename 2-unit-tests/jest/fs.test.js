@@ -135,4 +135,28 @@ describe('Unit tests for fs.js', () => {
 
     fsSpy.mockClear();
   });
+
+  const data = [
+    {
+      type: 'equilateral',
+      sides: [1, 1, 1],
+    },
+    {
+      type: 'isosceles',
+      sides: [1, 1, 2],
+    },
+    {
+      type: 'scalene',
+      sides: [1, 2, 3],
+    },
+  ];
+
+  describe.each(data)('A triangle', (triangle) => {
+    it(`whose sides are ${triangle.sides} should be ${triangle.type}`, () => {
+      console.log(triangle.sides);
+      const { type } = triangle;
+
+      expect(type).toBe(triangle.type);
+    });
+  });
 });
