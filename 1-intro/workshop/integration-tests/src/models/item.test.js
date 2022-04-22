@@ -1,6 +1,6 @@
 var mongoose = require("mongoose");
 var mongoDB = "mongodb://127.0.0.1/my_test_database";
-mongoose.connect(mongoDB);
+mongoose.connect(mongoDB,{useNexUrlParser: true});
 const Item = require('../models/Item.js');
 
 describe("Item model test", () => {
@@ -31,7 +31,7 @@ describe("Item model test", () => {
       const foundItem = await Item.findOne({
         name: "foo"
       });
-      
+
       const expected = "foo";
       const actual = foundItem.name;
       expect(actual).toEqual(expected);
