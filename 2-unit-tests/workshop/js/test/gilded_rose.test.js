@@ -9,6 +9,34 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toBe(2);
   });
 
+  /** */
+
+  it("should be equal to number of days left to sell the item ", function () {
+    const gildedRose = new Shop([new Item("foo", 23, 19)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(22);
+    expect(items[0].sellIn).toBeGreaterThanOrEqual(0);
+    expect(items[0].quality).toBe(18);
+    expect(items[0].quality).toBeGreaterThanOrEqual(0);
+  });
+
+  /*******************************************************/
+  /*******************************************************/
+
+  /**  codé par ESNAULT Bastien */
+  // À la fin de chaque journée, notre système diminue ces deux valeurs pour chaque produit.  
+  it("should decrement ", function () {
+    const gildedRose = new Shop([new Item("foo", 23, 19)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(22);
+    expect(items[0].quality).toBe(18);
+  });
+
+  /**  codé par ESNAULT Bastien */
+
+  /*******************************************************/
+  /*******************************************************/
+
 
   /** cette portion de code est valide mais le code ne respecte pas ce test **/
   

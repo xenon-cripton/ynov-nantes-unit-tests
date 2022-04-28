@@ -25,4 +25,3 @@ for (let day = 0; day < days; day++) {
   items.forEach(item => console.log(`${item.name}, ${item.sellIn}, ${item.quality}`));
   gildedRose.updateQuality();
 }
-
